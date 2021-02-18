@@ -3,7 +3,9 @@ package link
 // @Title link 链表包
 // @Description 单项链表数据结构练习，链表空时是nil，只有Next一个方向进行查询，每个节点都可以携带任意对象
 
-import "errors"
+import (
+	"errors"
+)
 
 // Node 节点
 type Node struct {
@@ -196,6 +198,32 @@ func Reverse(l *Link) error {
 
 	head.Next = nil
 	*l = p1
+	return nil
+}
+
+// DeleteNode 删除指定步长的节点
+func DeleteNode(l *Link, step int) error {
+	head := *l
+	tmp := head
+
+	if head == nil {
+		return ErrEmptyLink
+	}
+
+	curStep := 0
+	prev := tmp
+	for curStep < step-1 {
+		if tmp == nil {
+			return ErrOverflow
+		}
+
+		prev = tmp
+		tmp = tmp.Next
+		curStep++
+	}
+
+	prev.Next = tmp.Next
+
 	return nil
 }
 

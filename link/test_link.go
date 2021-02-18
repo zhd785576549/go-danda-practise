@@ -98,4 +98,24 @@ func TestLink() {
 			}
 		}
 	}
+
+	// 测试删除
+	if err := DeleteNode(&testLink, 3); err != nil {
+		fmt.Println("Raise a error : ", err)
+	}
+
+	fmt.Println("Delete one node!!!!!")
+
+	if count, err := GetCount(testLink); err == nil {
+		for i := 1; i <= count; i++ {
+			curNode := new(Node)
+			if err = GetNodeByPosition(testLink, i, &curNode); err == nil {
+				stu := curNode.Data.(*Student)
+				fmt.Println("--------------Node-------------------")
+				fmt.Println("Get student number : ", stu.Number)
+				fmt.Println("Get student name : ", stu.Name)
+				fmt.Println("--------------Node End-------------------")
+			}
+		}
+	}
 }
