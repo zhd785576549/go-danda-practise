@@ -119,3 +119,27 @@ func TestLink() {
 		}
 	}
 }
+
+// TestStaticLink 测试静态链表
+func TestStaticLink() {
+	var testLink StaticLink
+
+	// fmt.Println("Before init addr : ", testLink)
+
+	if err := InitStaticLink(&testLink); err != nil {
+		fmt.Println("Raise a error : ", err)
+	}
+
+	fmt.Println("After init : ", testLink)
+
+	stu := Student{
+		Number: "3443434",
+		Name:   "测试1号",
+	}
+
+	if err := InsertSLL(testLink, 10, &stu); err != nil {
+		fmt.Println("Raise a error : ", err)
+	}
+
+	fmt.Println("After Insert : ", testLink)
+}

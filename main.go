@@ -5,5 +5,7 @@ import (
 )
 
 func main() {
-	link.TestLink()
+	// link.TestLink()
+
+	link.TestStaticLink()
 }
