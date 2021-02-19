@@ -22,7 +22,7 @@ func StackInit(s *Stack) error {
 
 // StackPush 入栈
 func StackPush(s *Stack, data interface{}) error {
-	if s.Top == MaxLinkLength-1 {
+	if s.Top == MaxLinkLength {
 		return ErrFull
 	}
 	s.Top++

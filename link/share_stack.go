@@ -71,7 +71,7 @@ func ShareStackPush(s *ShareStack, t StackType, data interface{}) error {
 
 // ShareStackPop 共享栈出栈
 func ShareStackPop(s *ShareStack, t StackType, data interface{}) error {
-	if (s.Top1 == -1 && t == STypeTop1) || (s.Top2 == MaxShareStackLength-1 && t == STypeTop2) {
+	if (s.Top1 == -1 && t == STypeTop1) || (s.Top2 == MaxShareStackLength && t == STypeTop2) {
 		return ErrEmpty
 	}
 
