@@ -192,3 +192,14 @@ func TestCircularLink() {
 		fmt.Println("--------------Node End-------------------")
 	}
 }
+
+// TestStack 测试栈
+func TestStack() {
+	var s Stack
+
+	// 初始化栈空间
+	if err := StackInit(&s); err != nil {
+		fmt.Println(err)
+	}
+
+}

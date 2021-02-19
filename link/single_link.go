@@ -3,23 +3,11 @@ package link
 // @Title link 链表包
 // @Description 单项链表数据结构练习，链表空时是nil，只有Next一个方向进行查询，每个节点都可以携带任意对象
 
-import (
-	"errors"
-)
-
 // Node 节点
 type Node struct {
 	Data interface{} // 任意对象的指针
 	Next *Node       // 下一个节点
 }
-
-// ErrEmptyLink 空连表
-var (
-	ErrEmptyLink      = errors.New("empty link")
-	ErrAlreadyInit    = errors.New("already init")
-	ErrOverflow       = errors.New("node add over flow the link")
-	ErrUnkownPosition = errors.New("unknown position")
-)
 
 // Pos 位置
 type Pos int

@@ -9,5 +9,7 @@ func main() {
 
 	// link.TestStaticLink()
 
-	link.TestCircularLink()
+	// link.TestCircularLink()
+
+	link.TestStack()
 }
