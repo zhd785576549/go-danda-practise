@@ -137,7 +137,11 @@ func TestStaticLink() {
 		Name:   "测试1号",
 	}
 
-	if err := InsertSLL(testLink, 10, &stu); err != nil {
+	if err := InsertSLL(testLink, 1, &stu); err != nil {
+		fmt.Println("Raise a error : ", err)
+	}
+
+	if err := InsertSLL(testLink, 1, &stu); err != nil {
 		fmt.Println("Raise a error : ", err)
 	}
 
