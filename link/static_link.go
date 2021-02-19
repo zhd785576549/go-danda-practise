@@ -115,8 +115,8 @@ func DeleteSLL(l StaticLink, i int) error {
 	// | data   |  xxx | xxx | xxx | xxx | xxx | xxx | ... |          nil        |
 	// | index  |  0   |  1  |  2  |  3  |  4  |  5  | ... | MaxLinkLength - 1   |
 	//
-	// -----------------变游标---------
-	//                    |           |
+	// -----------------变游标---
+	//                    |     |
 	// | cursor |  6   |  3  |  3  |  4  |  5  |  0  | ... |           1         |
 	// | data   |  xxx | xxx | xxx | xxx | xxx | xxx | ... |          nil        |
 	// | index  |  0   |  1  |  2  |  3  |  4  |  5  | ... | MaxLinkLength - 1   |
