@@ -13,7 +13,7 @@ type Stack struct {
 func StackInit(s *Stack) error {
 	if s.Data == nil {
 		s.Data = make([]interface{}, MaxLinkLength)
-		s.Top = 0
+		s.Top = -1
 		return nil
 	}
 
@@ -25,10 +25,8 @@ func StackPush(s *Stack, data interface{}) error {
 	if s.Top == MaxLinkLength-1 {
 		return ErrFull
 	}
-
-	s.Data[s.Top] = data
 	s.Top++
-
+	s.Data[s.Top] = data
 	return nil
 }
 

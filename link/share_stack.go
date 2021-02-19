@@ -36,7 +36,7 @@ func ShareStackInit(s *ShareStack) error {
 	// 0, 1, -1, -2 表示下标，0,1是正向下标，-1,-2是逆向下标，-1代表最后一个元素
 
 	s.Data = make([]interface{}, MaxShareStackLength)
-	s.Top1 = 0
+	s.Top1 = -1
 	s.Top2 = MaxShareStackLength - 1
 
 	return nil
@@ -71,7 +71,7 @@ func ShareStackPush(s *ShareStack, t StackType, data interface{}) error {
 
 // ShareStackPop 共享栈出栈
 func ShareStackPop(s *ShareStack, t StackType, data interface{}) error {
-	if (s.Top1 == 0 && t == STypeTop1) || (s.Top2 == MaxShareStackLength-1 && t == STypeTop2) {
+	if (s.Top1 == -1 && t == STypeTop1) || (s.Top2 == MaxShareStackLength-1 && t == STypeTop2) {
 		return ErrEmpty
 	}
 
