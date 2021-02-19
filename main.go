@@ -7,5 +7,9 @@ import (
 func main() {
 	// link.TestLink()
 
-	link.TestStaticLink()
+	// link.TestStaticLink()
+
+	// link.TestCircularLink()
+
+	link.TestStack()
 }
