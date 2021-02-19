@@ -147,3 +147,48 @@ func TestStaticLink() {
 
 	fmt.Println("After Insert : ", testLink)
 }
+
+// TestCircularLink 测试循环列表
+func TestCircularLink() {
+	var testLink CircularLink
+
+	CircularLinkInit(&testLink)
+
+	stu1 := Student{
+		Number: "1",
+		Name:   "测试1号",
+	}
+
+	stu2 := Student{
+		Number: "2",
+		Name:   "测试2号",
+	}
+
+	stu3 := Student{
+		Number: "3",
+		Name:   "测试3号",
+	}
+
+	// 测试是否循环，总是打印下一个节点的地址
+	// fmt.Println(testLink)
+	// fmt.Println(testLink.Next)
+	// fmt.Println(testLink.Next)
+	// fmt.Println(testLink.Next)
+	// fmt.Println(testLink.Next)
+	// fmt.Println(testLink.Next)
+
+	CircularLinkInsert(&testLink, 1, &stu1)
+	CircularLinkInsert(&testLink, 1, &stu2)
+	CircularLinkInsert(&testLink, 1, &stu3)
+
+	count := CircularLinkLength(testLink)
+	for i := 0; i < count; i++ {
+		var node *CircularLinkNode
+		GetCircularLinkNode(testLink, i, node)
+		stu := node.Data.(Student)
+		fmt.Println("--------------Node-------------------")
+		fmt.Println("Get student number : ", stu.Number)
+		fmt.Println("Get student name : ", stu.Name)
+		fmt.Println("--------------Node End-------------------")
+	}
+}
